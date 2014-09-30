@@ -3,7 +3,7 @@ package test
 import (
 	"bytes"
 	"fmt"
-	"github.com/gocql/gocql"
+	"github.com/CrowdSurge/gocql"
 	"github.com/relops/cqlr"
 	"github.com/stretchr/testify/assert"
 	"strings"

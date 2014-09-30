@@ -93,5 +93,5 @@ The binding is specifically stateful so that down the line, the first loop execu
 
 Right now this is an experiment to try to come up with a design that people think is useful and can be implemented sanely.
 
-[gocql]: https://github.com/gocql/gocql
+[gocql]: https://github.com/CrowdSurge/gocql
 [cqlc]: https://github.com/relops/cqlc

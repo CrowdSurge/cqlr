@@ -2,7 +2,7 @@ package cqlr
 
 import (
 	"errors"
-	"github.com/gocql/gocql"
+	"github.com/CrowdSurge/gocql"
 	"reflect"
 	"strings"
 )
