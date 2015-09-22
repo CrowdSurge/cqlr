@@ -71,7 +71,15 @@ func (b *Binding) Strict() *Binding {
 }
 
 func (b *Binding) Close() error {
-	return b.err
+	if b.err != nil {
+		return b.err
+	}
+
+	if err := b.iter.Close(); err != nil {
+		return err
+	}
+
+	return nil
 }
 
 func (b *Binding) Scan(dest interface{}) bool {
@@ -125,10 +133,10 @@ func (b *Binding) bind(q *gocql.QueryInfo) ([]interface{}, error) {
 		}
 
 		if ok {
-			if f.CanAddr() {
-				values[i] = f.Addr().Interface()
-			} else if f.CanInterface() {
+			if f.CanInterface() {
 				values[i] = f.Interface()
+			} else if f.CanAddr() {
+				values[i] = f.Addr().Interface()
 			}
 		}
 
